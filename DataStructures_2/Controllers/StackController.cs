@@ -36,9 +36,9 @@ namespace DataStructures_2.Controllers
         {
             progStack.Clear();
             string addMe = "";
-            while (progStack.Count() < 2001)
+            while (progStack.Count() < 2000)
             {
-                addMe = "New Entry " + progStack.Count();
+                addMe = "New Entry " + (progStack.Count() +1);
                 progStack.Push(addMe);
             }
             ViewBag.myStack = progStack;
