@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="~/Content/DataStyles.css" />
+</head>
+<div class="container">
+    <div class="jumbotron; w3-blue">
+        <h1>Stack</h1>
+        <p>The Stack is a useful Last in First Out (LIFO) structure</p>
+    </div>
+</div>
+
+<Body>
+    <!--Show stack to the user-->
+    <div class="resizeMe">
+        @foreach (var stackItem in ViewBag.myStack)
+        {
+            <p>@stackItem</p>
+        }
+    </div>
+    <ul>
+        <li>
+            <a href="@Url.Action("AddOneItemToStack", "Stack")"
+               class="w3-bar-item w3-button">1. Add one time to Stack</a>
+        </li>
+
+        <li>
+            <a href="@Url.Action("AddManyItemsToStack", "Stack")"
+               class="w3-bar-item w3-button">2. Add Huge List of Items to Stack</a>
+        </li>
+
+        <li>
+            <a href="@Url.Action("DisplayStack", "Stack")"
+               class="w3-bar-item w3-button">3. Display Stack</a>
+        </li>
+
+        <li>
+            <form action="DeleteFromStack" method="post" class="w3-bar-item w3-button">
+                4. Delete From Stack :- <input type="text" id="ItemToDelete" name="ItemToDelete" />
+                <input id="Submit" name="Submit" type="submit" value="Delete It!" />
+            </form>
+        </li>
+
+        <li>
+            <a href="@Url.Action("ClearStack", "Stack")"
+               class="w3-bar-item w3-button">5. Clear Stack</a>
+        </li>
+
+        <li>
+            <form action="SearchStack" method="post" class="w3-bar-item w3-button">
+                6. Search Stack: <input type="text" id="findMe" name="findMe" />
+                <input id="Submit" name="Submit" type="submit" value="Search" />
+            </form>
+        </li>
+        <li>
+            <form action="AddCustomItem" method="post" class="w3-bar-item w3-button">
+                7. Add Custom Item: <input type="text" id="addMe" name="addMe" />
+                <input id="Submit" name="Submit" type="submit" value="Add" />
+            </form>
+        </li>
+
+        <li>
+            <a href="@Url.Action("Index", "Home")"
+               class="w3-bar-item w3-button">8. Return to Home</a>
+        </li>
+    </ul>
+
+</Body>
+<footer><img src="~/Graphics/SkyLine.jpg" alt="My Bad" style="width: 800px; height: 400px;" /></footer>
+

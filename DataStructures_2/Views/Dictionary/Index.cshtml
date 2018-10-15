@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <title>Dictionary</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/DataStyles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<h2>Addictionary</h2>
+
+<Body>
+    <!--Show stack to the user-->
+    <div class="resizeMe">
+        @foreach (var Dict in ViewBag.myDictionary)
+        {
+            <p>@Dict.Value</p>
+        }
+    </div>
+    <ul>
+        <li>
+            <a href="@Url.Action("AddOneItemToDictionary", "Dictionary")"
+               class="w3-bar-item w3-button">1. Add one time to Dictionary</a>
+        </li>
+
+        <li>
+            <a href="@Url.Action("AddManyItemsToDictionary", "Dictionary")"
+               class="w3-bar-item w3-button">2. Add Huge List of Items to Dictionary</a>
+        </li>
+
+        <li>
+            <a href="@Url.Action("DisplayDictionary", "Dictionary")"
+               class="w3-bar-item w3-button">3. Display Dictionary</a>
+        </li>
+
+        <li>
+            <form action="DeleteFromDictionary" method="post" class="w3-bar-item w3-button">
+                4. Delete From Dictionary <input type="text" id="ItemToDelete" name="ItemToDelete" />
+                <input id="Submit" name="Submit" type="submit" value="Delete It!" />
+            </form>
+        </li>
+
+        <li>
+            <a href="@Url.Action("ClearDictionary", "Dictionary")"
+               class="w3-bar-item w3-button">5. Clear Dictionary</a>
+        </li>
+
+        <li>
+            <form action="SearchDictionary" method="post" class="w3-bar-item w3-button">
+                6. Search Dictionary <input type="text" id="findMe" name="findMe" />
+                <input id="Submit" name="Submit" type="submit" value="Search" />
+            </form>
+        </li>
+        <li>
+            <form action="AddCustomItem" method="post" class="w3-bar-item w3-button">
+                7. Add Custom Item: <input type="text" id="addMe" name="addMe" />
+                <input id="Submit" name="Submit" type="submit" value="Add" />
+            </form>
+        </li>
+
+        <li>
+            <a href="@Url.Action("Index", "Home")"
+               class="w3-bar-item w3-button">8. Return to Home</a>
+        </li>
+    </ul>
+
+</Body>

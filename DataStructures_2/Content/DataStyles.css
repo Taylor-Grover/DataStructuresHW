@@ -1,0 +1,19 @@
+﻿.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.background{
+    color: aqua;
+}
+.resizeMe {
+    border: 2px solid;
+    position: absolute;
+    right: 100px;
+    top: 25px;
+}
+.StackCity{
+   
+   background-color: black;
+}
